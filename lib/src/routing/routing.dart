@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app_with_riverpod/src/news/domain/news_model.dart';
-import 'package:news_app_with_riverpod/src/news/presentation/detail_page.dart';
 import 'package:news_app_with_riverpod/src/news/presentation/mainPage.dart';
 
 enum AppRoute {

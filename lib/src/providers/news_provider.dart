@@ -26,13 +26,13 @@ class DataNotifier extends StateNotifier<NewsState> {
     final newsRes = await NewsService().fetchData();
     final news = NewsModel.fromJson(newsRes);
     state = state.copyWith(isLoading: false, newsModel: news);
+  }
 
-    getNewsBySearch(String title) async {
-      state = state.copyWith(isLoading: true);
-      final searchRes = await NewsService().fetchNewsBySearching(title);
-      final searchData = NewsModel.fromJson(searchRes);
-      state = state.copyWith(isLoading: false);
-    }
+  getNewsBySearch(String title) async {
+    state = state.copyWith(isLoading: true);
+    final searchRes = await NewsService().fetchNewsBySearching(title);
+    final searchData = NewsModel.fromJson(searchRes);
+    state = state.copyWith(isLoading: false, newsModel: searchData);
   }
 }
 

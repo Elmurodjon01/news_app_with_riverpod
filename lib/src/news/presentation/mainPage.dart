@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:news_app_with_riverpod/src/news/domain/news_model.dart';
 import 'package:news_app_with_riverpod/src/providers/news_provider.dart';
-import 'package:news_app_with_riverpod/src/routing/routing.dart';
 import 'package:news_app_with_riverpod/src/widgets/custom_news_box.dart';
+import 'package:news_app_with_riverpod/src/widgets/search_box.dart';
 
 class MainPage extends ConsumerWidget {
   const MainPage({super.key});
@@ -21,15 +20,23 @@ class MainPage extends ConsumerWidget {
           )
         : Scaffold(
             appBar: AppBar(
-              title: const Text('news'),
+              backgroundColor: Colors.green,
+              title: const Text('Today\'s news'),
             ),
-            body: ListView.builder(
-              itemCount: data.articles!.length,
-              itemBuilder: (context, i) {
-                return CustomNewsBox(
-                  news: data.articles![i],
-                );
-              },
+            body: Column(
+              children: [
+                const SearchBox(),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: data.articles!.length,
+                    itemBuilder: (context, i) {
+                      return CustomNewsBox(
+                        news: data.articles![i],
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           );
   }

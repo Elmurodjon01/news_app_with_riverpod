@@ -34,7 +34,7 @@ class CustomNewsBox extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.all(10),
-        height: height * 0.1,
+        height: height * 0.15,
         width: width * 0.1,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -77,24 +77,31 @@ class CustomNewsBox extends StatelessWidget {
                     const SizedBox(
                       height: 9,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        AutoSizeText(
-                          'Author: ${news.author.toString()}',
-                          style: const TextStyle(fontSize: 10),
-                          minFontSize: 8,
-                          maxLines: 5,
-                          overflow: TextOverflow.visible,
-                        ),
-                        AutoSizeText(
-                          'Published: ${news.publishedAt.toString()}',
-                          style: const TextStyle(fontSize: 10),
-                          minFontSize: 8,
-                          maxLines: 5,
-                          overflow: TextOverflow.visible,
-                        ),
-                      ],
+                    Expanded(
+                      flex: 1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: AutoSizeText(
+                              'Author: ${news.author.toString()}',
+                              style: const TextStyle(fontSize: 10),
+                              minFontSize: 8,
+                              maxLines: 5,
+                              overflow: TextOverflow.visible,
+                            ),
+                          ),
+                          Expanded(
+                            child: AutoSizeText(
+                              'Published: ${news.publishedAt.toString()}',
+                              style: const TextStyle(fontSize: 10),
+                              minFontSize: 8,
+                              maxLines: 5,
+                              overflow: TextOverflow.visible,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

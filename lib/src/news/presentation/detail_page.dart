@@ -1,9 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:news_app_with_riverpod/src/news/constants/const.dart';
-import 'package:news_app_with_riverpod/src/news/domain/news_model.dart';
 
 class DetailPage extends StatelessWidget {
   DetailPage({
