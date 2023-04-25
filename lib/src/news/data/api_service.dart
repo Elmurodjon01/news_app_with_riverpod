@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:news_app_with_riverpod/src/constants/const.dart';
 
 class NewsService {
   final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: ApiKey().baseUrl,
+      baseUrl: 'https://newsapi.org/',
       responseType: ResponseType.json,
     ),
   );
